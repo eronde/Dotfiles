@@ -8,7 +8,7 @@ mkdir -vp $DOTDIR
 mkdir -vp $DOTDIR_OLD
 
 for FILE in $DOTFILES ; do
-  if [[ -e ~/.$FILE ]]; then
+  if [ -e ~/.$FILE ]; then
     echo "Moving old ~./$FILE to $DOTDIR_OLD/"
     mv -v  ~/.$FILE $DOTDIR_OLD/$FILE\_$NOW
   fi
