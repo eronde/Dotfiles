@@ -1,7 +1,7 @@
 Installation
 -------------
 
-### Linuxx
+### Linux
 ````
 cd
 git clone
