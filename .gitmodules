@@ -139,3 +139,6 @@
 [submodule "vim/bundle/vim-repeat"]
 	path = vim/bundle/vim-repeat
 	url = git://github.com/tpope/vim-repeat
+[submodule "vim/bundle/SingleCompile"]
+	path = vim/bundle/SingleCompile
+	url = git://github.com/xuhdev/SingleCompile
