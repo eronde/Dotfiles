@@ -1,0 +1,5 @@
+#stickykeys
+keymaps 0-15
+keycode 54 = SShift
+keycode 97 = SCtrl
+keycode 100 = SAlt
