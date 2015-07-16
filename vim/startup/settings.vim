@@ -68,7 +68,8 @@ map! <F3> <ESC> :emenu <C-Z>
 "
 " -------------
 " Interface
-" -------------
+"---------------
+set number relativenumber
 set ruler
 set number
 set wrap
@@ -131,6 +132,8 @@ au FocusLost * :wa<CR>
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv<CR>
 nnoremap N Nzzzv
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 
 "set ofu=syntaxcomplete#Complete
 "set g:ragtag_global_maps = 1
