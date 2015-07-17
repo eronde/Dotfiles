@@ -142,6 +142,3 @@
 [submodule "vim/bundle/SingleCompile"]
 	path = vim/bundle/SingleCompile
 	url = git://github.com/xuhdev/SingleCompile
-[submodule "vim-indexed-search"]
-	path = vim-indexed-search
-	url = https://github.com/henrik/vim-indexed-search
