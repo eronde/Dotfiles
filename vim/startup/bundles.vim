@@ -27,6 +27,7 @@ Bundle 'gregsexton/VimCalc'
  Bundle 'kien/rainbow_parentheses.vim'
   Bundle 'tpope/vim-commentary'
   Bundle 'mhinz/vim-signify'
+  Bundle  'henrik/vim-indexed-search'
 "    Bundle 'xolox/vim-misc'
 "" Navigation
 Bundle 'Shougo/unite.vim'
