@@ -145,3 +145,6 @@
 [submodule "vim/bundle/vim-indexed-search"]
 	path = vim/bundle/vim-indexed-search
 	url = https://github.com/henrik/vim-indexed-search
+[submodule "vim/bundle/vimtex"]
+	path = vim/bundle/vimtex
+	url = https://github.com/lervag/vimtex
