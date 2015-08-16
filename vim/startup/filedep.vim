@@ -16,6 +16,7 @@ if has("autocmd")
   autocmd FileType text setlocal textwidth=78
   autocmd FileType text setlocal wrapmargin=72
   autocmd FileType tex  set number
+  autocmd BufRead,BufNewFile *.tex set filetype=tex
 
   autocmd FileType python set omnifunc=pythoncomplete#Complet number
   autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
