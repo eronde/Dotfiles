@@ -8,7 +8,8 @@ let g:pymode_indent = 1
 
 
 let g:jedi#completions_command="<F12>"
-map <F2> :PymodeRun<CR>
+map <F2> <ESC>:!sh ../run_app.sh %<CR>
+imap <F2> <ESC>:!sh ../run_app.sh %<CR>
 " don't use linter, we use syntastic for that
 let g:pymode_lint_on_write = 0
 
