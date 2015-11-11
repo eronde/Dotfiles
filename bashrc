@@ -26,7 +26,7 @@ fi
 #fi
 alias ls="ls --color=always"
 alias d="ls --color=always -a"
-alias v="ls -FG -l -a -h --color=always "
+alias v="ls -Fsv -l -a -h --color=always "
 alias e='sudo paludis -i'
 #alias es='sudo eix b'
 #alias ep='sudo paludis -pi'
@@ -165,12 +165,12 @@ PERL_MM_OPT="INSTALL_BASE=/home/eric/perl5"; export PERL_MM_OPT;
 #virtualenv, pip install virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/project/python
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python 
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.5
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
 alias mkpro2="mkproject -p /usr/bin/python2"
 alias mkpro3="mkproject -p /usr/bin/python3"
 source /usr/bin/virtualenvwrapper.sh
-
+export PULSE_LATENCY_MSEC=60
 
 
 
