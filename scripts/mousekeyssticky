@@ -1,4 +1,4 @@
 #!/bin/bash
 #accessX needed
 #stickykeys -stickytwokeydisable
-ax -timeout   +mousekeys mousedelay 1 mouseinterval 10 mousetimetomax 80 mousemaxspeed 20 +repeatkeys repeatdelay 500 repeatinterval 20 +stickykeys -stickytwokeydisable +stickylatchtolock
+ax -timeout   +mousekeys mousedelay 1 mouseinterval 10 mousetimetomax 55 mousemaxspeed 37 +repeatkeys repeatdelay 500 repeatinterval 20 +stickykeys -stickytwokeydisable +stickylatchtolock
