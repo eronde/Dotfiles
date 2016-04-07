@@ -172,7 +172,15 @@ alias mkpro3="mkproject -p /usr/bin/python3"
 source /usr/bin/virtualenvwrapper.sh
 export PULSE_LATENCY_MSEC=60
 
+transfer() {
+    # write to output to tmpfile because of progress bar
+    tmpfile=$( mktemp -t transferXXX )
+    curl --progress-bar --upload-file $1 https://transfer.sh/$(basename $1) >> $tmpfile;
+    cat $tmpfile;
+    rm -f $tmpfile;
+}
 
+alias transfer=transfer
 
 
 
