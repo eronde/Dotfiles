@@ -182,11 +182,8 @@ transfer() {
 
 alias transfer=transfer
 
-
-
-
-
-
-
-
+historyGrep() {
+    history | grep $1
+}
+alias hg=historyGrep
 
