@@ -183,7 +183,12 @@ transfer() {
 alias transfer=transfer
 
 historyGrep() {
-    history | grep $1
+  local var="$1"
+  if [[ -z "$var" ]]; then
+    echo "Use hg [seachterm] to find something quickly in history"
+  else
+    history | grep "$var"
+  fi
 }
 alias hg=historyGrep
 
