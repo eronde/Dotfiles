@@ -9,7 +9,7 @@ map <F4> :set paste
 map! <F4> <ESC>:set paste
 map <F5> :set nopaste
 map! <F5> <ESC>:set nopaste
-map <F4> :w!
+map <F6> :w!
 map! <F6> <ESC>:w!
 map <F6> <ESC>:w!
 map <F7> :wqa!<CR>
@@ -187,4 +187,11 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 "
-
+"
+"
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
