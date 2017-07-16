@@ -359,3 +359,79 @@ let g:syntastic_c_check_header = 1
 let g:syntastic_c_compiler = 'gcc'
 let g:syntastic_c_compiler_options = '-std=c99 -Wall'
 
+
+"--------------
+" YCM
+"--------------
+
+let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+let g:ycm_complete_in_comments = 1 " Completion in comments
+let g:ycm_complete_in_strings = 1 " Completion in string
+let g:ycm_collect_identifiers_from_tags_files = 1
+"
+"--------------
+" python-mode
+"--------------
+"--------------
+let g:pymode_rope = 0
+
+
+" vim-pyenv
+"--------------
+
+" vim-pyenv Setup {{{
+if jedi#init_python()
+    function! s:jedi_auto_force_py_version() abort
+        let major_version = pyenv#python#get_internal_major_version()
+        call jedi#force_py_version(major_version)
+    endfunction
+    augroup vim-pyenv-custom-augroup
+        au! *
+        au User vim-pyenv-activate-post   call s:jedi_auto_force_py_version()
+        au User vim-pyenv-deactivate-post call s:jedi_auto_force_py_version()
+    augroup END
+endif
+" }}}
+
+"--------------
+" jedi
+"--------------
+"
+" Jedi Setup {{{
+if exists(':NeoCompleteEnable')
+  let g:jedi#popup_on_dot = 0
+endif
+let g:jedi#popup_on_dot = 1
+let g:jedi#auto_initialization = 1
+let g:jedi#show_call_signatures = 2
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#show_call_signatures_delay = 0
+if &rtp =~ '\<jedi\>'
+  augroup JediSetup
+    au!
+    au FileType python
+          \ setlocal omnifunc=jedi#completions  |
+          \ call jedi#configure_call_signatures()
+  augroup END
+endif
+" }}}
+
+"" Add the virtualenv's site-packages to vim path
+"py << EOF
+"import os.path
+"import sys
+"import vim
+"if 'VIRTUALENV' in os.environ:
+"    project_base_dir = os.environ['VIRTUAL_ENV']
+"    sys.path.insert(0, project_base_dir)
+"    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"    execfile(activate_this, dict(__file__=activate_this))
+"EOF
+
+"" Load up virtualenv's vimrc if it exists
+"if filereadable($VIRTUAL_ENV . '/.vimrc')
+"    source $VIRTUAL_ENV/.vimrc
+"endif
+""
