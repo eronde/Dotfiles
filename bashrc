@@ -165,7 +165,7 @@ PERL_MM_OPT="INSTALL_BASE=/home/eric/perl5"; export PERL_MM_OPT;
 #virtualenv, pip install virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/project/python
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.5
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
 alias mkpro2="mkproject -p /usr/bin/python2"
 alias mkpro3="mkproject -p /usr/bin/python3"
@@ -173,16 +173,26 @@ source /usr/bin/virtualenvwrapper.sh
 export PULSE_LATENCY_MSEC=60
 
 transfer() {
-    # write to output to tmpfile because of progress bar
-    tmpfile=$( mktemp -t transferXXX )
-    curl --progress-bar --upload-file $1 https://transfer.sh/$(basename $1) >> $tmpfile;
-    cat $tmpfile;
-    rm -f $tmpfile;
+  local fname="$1"
+  local stest=$2
+  local MAX_DOWLOADS=$2
+  local MAX_DAYS=$3
+  echo -e "$fname\n"
+  echo -e "$stest\n"
+
+  # write to output to tmpfile because of progress bar
+  tmpfile=$( mktemp -t transferXXX )
+  ###curl -H "Max-Downloads: $MAX_DOWLOADS" --upload-file $fname https://transfer.sh/$(basename $1) >> $tmpfile;
+  curl -H "Max-Downloads: $MAX_DOWLOADS" -H "Max-Days: $MAX_DAYS" --upload-file $fname https://transfer.sh/$(basename $1) >> $tmpfile;
+  cat $tmpfile;
+  rm -f $tmpfile;
+  echo 
 }
 
 alias transfer=transfer
 
 historyGrep() {
+  set -x
   local var="$1"
   if [[ -z "$var" ]]; then
     echo "Use hg [seachterm] to find something quickly in history"
