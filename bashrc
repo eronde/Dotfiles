@@ -174,15 +174,11 @@ export PULSE_LATENCY_MSEC=60
 
 transfer() {
   local fname="$1"
-  local stest=$2
-  local MAX_DOWLOADS=$2
-  local MAX_DAYS=$3
-  echo -e "$fname\n"
-  echo -e "$stest\n"
+  local MAX_DOWLOADS=${2:-1}
+  local MAX_DAYS=${3:-5}
 
   # write to output to tmpfile because of progress bar
   tmpfile=$( mktemp -t transferXXX )
-  ###curl -H "Max-Downloads: $MAX_DOWLOADS" --upload-file $fname https://transfer.sh/$(basename $1) >> $tmpfile;
   curl -H "Max-Downloads: $MAX_DOWLOADS" -H "Max-Days: $MAX_DAYS" --upload-file $fname https://transfer.sh/$(basename $1) >> $tmpfile;
   cat $tmpfile;
   rm -f $tmpfile;
