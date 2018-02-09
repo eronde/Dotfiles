@@ -1,0 +1,89 @@
+##urxvt*font: xft:DejaVu Sans Mono:size=12.5
+urxvt*font:             xft:monospace:pixelsize=18
+urxvt.intensityStyles: false
+urxvt*borderLess:        false
+urxvt*externalBorder:        0
+urxvt*internalBorder:        2
+urxvt*scrollBar:        false
+urxvt*depth:                32
+urxvt*background:        rgba:0000/0000/0000/cccc
+urxvt*foreground:        #c8c8c8
+urxvt*cursorColor:        #ffffff
+urxvt*cursorColor2:        #000000
+urxvt*cursorBlink:        false
+urxvt*inheritPixmap:        false
+urxvt*termName:                rxvt-unicode-256color
+urxvt*saveLines:        1000
+urxvt*scrollTtyOutput:        false
+urxvt*scrollTtyKeypress:        true
+urxvt*mouseWheelScrollPage:        false
+urxvt*visualBell:           false
+urxvt.url-launcher:      waterfox
+urxvt.perl-ext: 
+urxvt.perl-ext-common: default,tabbed,matcher,resize-font,-tabbed,url-select,keyboard-select
+
+##URxvt.keysym.C-Up:     font-size:increase
+##URxvt.keysym.C-Down:   font-size:decrease
+##URxvt.keysym.C-S-Up:   font-size:incglobal
+##URxvt.keysym.C-S-Down: font-size:decglobal
+##URxvt.keysym.C-equal:  font-size:reset
+##URxvt.keysym.C-slash:  font-size:show
+##And re-bind some keymappings (if you want, below are the defaults):
+URxvt.keysym.C-Up:     resize-font:smaller
+URxvt.keysym.C-Down:      resize-font:bigger
+URxvt.keysym.C-equal:     resize-font:reset
+URxvt.keysym.C-question:  resize-font:show
+
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl-url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+
+*color0:  #2E3436
+*color8:  #555753
+*color1:  #CC0000
+*color9:  #EF2929
+*color2:  #4E9A06
+*color10: #8AE234
+*color3:  #C4A000
+*color11: #FCE94F
+*color4:  #3465A4
+*color12: #729FCF
+! Purple
+*color5:  #75507B
+*color13: #AD7FA8
+! Cyan
+*color6:  #06989A
+*color14: #34E2E2
+! White
+*color7:  #D3D7CF
+*color15: #EEEEEC
+
+! Xterm
+xterm*background:       black
+!xterm*boldFont:         vtbold
+xterm*border:           pink
+xterm*cursorColor:      white
+xterm*font:             -misc-fixed-*-*-*-*-*-120-*-100-*-90-*-*
+xterm*foreground:       grey90
+xterm*internalBorder:   2
+xterm*jumpScroll:       on
+xterm*mouse:            yellow
+xterm*reverse*Wrap:     on
+xterm.ReverseWrap:      on
+xterm*saveLines:        2000
+xterm*scrollBar:        off
+xterm*titlebar:         on
+xterm*visualBell:       on
+xterm.ActiveIcon:       on
+xterm.AllowIconInput:   on
+xterm.AutoRaise:        on
+xterm.Background:       black
+xterm.Border:           blue
+xterm.BorderWidth:      3
+xterm.Cursor:           green
+xterm.Foreground:       yellow
+xterm.InternalBorder:   2
+xterm.TextUnderIcon:    on
+
+aterm*font: -*-fixed-*-*-*-*-15-*-*-*-*-*-*-*
