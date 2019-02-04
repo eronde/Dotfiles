@@ -165,7 +165,7 @@ PERL_MM_OPT="INSTALL_BASE=/home/eric/perl5"; export PERL_MM_OPT;
 #virtualenv, pip install virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/project/python
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.7
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
 alias mkpro2="mkproject -p /usr/bin/python2"
 alias mkpro3="mkproject -p /usr/bin/python3"
@@ -174,21 +174,28 @@ export PULSE_LATENCY_MSEC=60
 
 transfer() {
   local fname="$1"
+  local FE="${fname##*.}"
   local MAX_DOWLOADS=${2:-1}
   local MAX_DAYS=${3:-5}
 
   # write to output to tmpfile because of progress bar
   tmpfile=$( mktemp -t transferXXX )
-  curl -H "Max-Downloads: $MAX_DOWLOADS" -H "Max-Days: $MAX_DAYS" --upload-file $fname https://transfer.sh/$(basename $1) >> $tmpfile;
+  local SCRAMBLEFN=/tmp/$(echo "$RANDOM $RANDOM $RANDOM $RANDOM $RANDOM" | sha512sum | cut -c -16).$FE
+  echo $SCRAMBLEFN 
+  cp $fname $SCRAMBLEFN;
+  #curl -H "Max-Downloads: $MAX_DOWLOADS" -H "Max-Days: $MAX_DAYS" --upload-file $fname https://transfer.sh/$SCAMBLEFN >> $tmpfile;
+  curl -H "Max-Downloads: $MAX_DOWLOADS" -H "Max-Days: $MAX_DAYS" --upload-file $SCRAMBLEFN https://transfer.sh/$(basename $SCRAMBLEFN) >> $tmpfile;
   cat $tmpfile;
   rm -f $tmpfile;
-  echo 
+  rm -f $SCRAMBLEFN;
+  echo
+  echo "Removing files: $SCRAMBLEFN $tmpfile";
+  echo
 }
 
 alias transfer=transfer
 
 historyGrep() {
-  set -x
   local var="$1"
   if [[ -z "$var" ]]; then
     echo "Use hg [seachterm] to find something quickly in history"
@@ -197,4 +204,8 @@ historyGrep() {
   fi
 }
 alias hg=historyGrep
-
+#Powerline
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /usr/share/powerline/bindings/bash/powerline.sh
