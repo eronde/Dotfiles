@@ -173,16 +173,19 @@ source /usr/bin/virtualenvwrapper.sh
 export PULSE_LATENCY_MSEC=60
 
 transfer() {
-  local fname="$1"
-  local FE="${fname##*.}"
+  local fname=$1
+  local FE=${fname##*.}
   local MAX_DOWLOADS=${2:-1}
   local MAX_DAYS=${3:-5}
 
   # write to output to tmpfile because of progress bar
   tmpfile=$( mktemp -t transferXXX )
   local SCRAMBLEFN=/tmp/$(echo "$RANDOM $RANDOM $RANDOM $RANDOM $RANDOM" | sha512sum | cut -c -16).$FE
-  echo $SCRAMBLEFN 
-  cp $fname $SCRAMBLEFN;
+  echo $SCRAMBLEFN; 
+  #Strip quotes with xargs
+  cp "$( echo $fname|xargs)" "$SCRAMBLEFN";
+  if [[ -f $SCRAMBLEFN ]]; then
+    #statements
   #curl -H "Max-Downloads: $MAX_DOWLOADS" -H "Max-Days: $MAX_DAYS" --upload-file $fname https://transfer.sh/$SCAMBLEFN >> $tmpfile;
   curl -H "Max-Downloads: $MAX_DOWLOADS" -H "Max-Days: $MAX_DAYS" --upload-file $SCRAMBLEFN https://transfer.sh/$(basename $SCRAMBLEFN) >> $tmpfile;
   cat $tmpfile;
@@ -191,6 +194,7 @@ transfer() {
   echo
   echo "Removing files: $SCRAMBLEFN $tmpfile";
   echo
+  fi
 }
 
 alias transfer=transfer
