@@ -39,6 +39,7 @@ alias df='df -h'
 alias grep="grep --color=auto"
 alias unrar="unrar x"
 alias ..="cd .."
+alias backup_docs_to_nas=" sudo rsync -rah  -v --exclude '.cache*' --exclude '*.svn*' --exclude 'gegevens' --exclude '*archbuild*' -e 'ssh -p2212 -i ~eric/.ssh/nas_id_rsa' /home/eric/docs/ 'eric@192.168.2.12:~/backup/docs/'  --progress --log-file ~eric/rsync_home.log"
 # Change the window title of X terminals 
 #case $TERM in
 #	xterm*|rxvt*|Eterm)
@@ -212,4 +213,7 @@ alias hg=historyGrep
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-. /usr/share/powerline/bindings/bash/powerline.sh
+. /usr/share/powerline/bindings/bash/powerline.sh 
+
+#set vim mode
+set -o vi
