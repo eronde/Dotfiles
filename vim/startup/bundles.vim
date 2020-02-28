@@ -1,96 +1,110 @@
-set nocompatible
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc(expand('~/.vim/bundle/'))
+"set nocompatible
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc(expand('~/.vim/bundle/'))
 
-" Let NeoBundle manage NeoBundle
-"NeoBundleFetch 'Shougo/neobundle.vim'
-Bundle 'gmarik/vundle'
-Bundle 'Shougo/vimproc', { 'build' : { 'unix' : 'make' }, }
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
   
-Bundle 'gregsexton/VimCalc'
+Plug 'gregsexton/VimCalc'
 
-"  Bundle 'hotoo/calendar-vim'
-"  Bundle 'Stormherz/tablify'
-"  Bundle 'bling/vim-bufferline'
-"  Bundle 'hwrod/interactive-replace'
-  Bundle 'jeetsukumaran/vim-buffergator'
-  Bundle 'kien/ctrlp.vim'
-"  Bundle 'mbbill/undotree'
-"  Bundle 'mtth/locate.vim'
-"  Bundle 'scrooloose/nerdtree'
-  Bundle 'tacahiroy/ctrlp-funky'
-  Bundle 'terryma/vim-multiple-cursors'
- Bundle 'tpope/vim-unimpaired'
-  Bundle 'yonchu/accelerated-smooth-scroll'
-  Bundle 'SirVer/ultisnips'
-"  Bundle 'AzizLight/TaskList.vim'
- Bundle 'kien/rainbow_parentheses.vim'
-  Bundle 'tpope/vim-commentary'
-  Bundle 'mhinz/vim-signify'
-  Bundle  'henrik/vim-indexed-search'
-"    Bundle 'xolox/vim-misc'
+"  Plug 'hotoo/calendar-vim'
+"  Plug 'Stormherz/tablify'
+"  Plug 'bling/vim-bufferline'
+"  Plug 'hwrod/interactive-replace'
+  Plug 'jeetsukumaran/vim-buffergator'
+  Plug 'kien/ctrlp.vim'
+"  Plug 'mbbill/undotree'
+"  Plug 'mtth/locate.vim'
+"  Plug 'scrooloose/nerdtree'
+  Plug 'tacahiroy/ctrlp-funky'
+  Plug 'terryma/vim-multiple-cursors'
+ Plug 'tpope/vim-unimpaired'
+  Plug 'yonchu/accelerated-smooth-scroll'
+ Plug 'SirVer/ultisnips'
+"  Plug 'AzizLight/TaskList.vim'
+ Plug 'kien/rainbow_parentheses.vim'
+  Plug 'tpope/vim-commentary'
+  Plug 'mhinz/vim-signify'
+  Plug  'henrik/vim-indexed-search'
+"    Plug 'xolox/vim-misc'
 "" Navigation
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimfiler.vim'
-Bundle 'Shougo/vimshell.vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'spiiph/vim-space'
-Bundle 'Lokaltog/vim-easymotion'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/vimshell.vim'
+Plug 'sjl/gundo.vim'
+Plug 'spiiph/vim-space'
+Plug 'Lokaltog/vim-easymotion'
 "" UI Additions
-  Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'godlygeek/csapprox'
-Bundle 'Rykka/colorv.vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'bling/vim-airline'
+  Plug 'nathanaelkane/vim-indent-guides'
+Plug 'godlygeek/csapprox'
+Plug 'Rykka/colorv.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'bling/vim-airline'
 "" Commands
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-Bundle 'godlygeek/tabular'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'godlygeek/tabular'
 "" Automatic Helpers
-"Bundle 'IndexedSearch'
-Bundle 'Raimondi/delimitMate'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'gregsexton/MatchTag'
-"Bundle 'Shougo/neocomplete.vim'
-"Bundle 'Shougo/neosnippet'
-Bundle 'honza/vim-snippets'
-Bundle 'majutsushi/tagbar'
-"Bundle 'mattn/emmet-vim'
-Bundle 'mhinz/vim-startify'
-Bundle 'othree/vim-autocomplpop'
-Bundle 'Valloric/YouCompleteMe'
+"Plug 'IndexedSearch'
+Plug 'Raimondi/delimitMate'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'scrooloose/syntastic'
+"Plug 'Shougo/neocomplete.vim'
+"Plug 'Shougo/neosnippet'
+Plug 'honza/vim-snippets'
+Plug 'majutsushi/tagbar'
+Plug 'mattn/emmet-vim'
+Plug 'mhinz/vim-startify'
+" Plug 'othree/vim-autocomplpop'
+Plug 'L9'
+Plug 'Valloric/YouCompleteMe', {'do' : 'python install.py --clang-completer'}
+"Plug 'Valloric/YouCompleteMe', {'do' : 'python install.py --all'}
 "" Language Additions
-"Bundle 'dag/vim2hs'
-"Bundle 'vecio/lispp.vim'
-"Bundle 'vim-ruby/vim-ruby'
-"Bundle 'tpope/vim-rails'
-"Bundle 'tpope/vim-haml'
+"Plug 'dag/vim2hs'
+"Plug 'vecio/lispp.vim'
+"Plug 'vim-ruby/vim-ruby'
+"Plug 'tpope/vim-rails'
+"Plug 'tpope/vim-haml'
 """undle 'vim-pandoc/vim-pandoc'
-"Bundle 'pangloss/vim-javascript'
-Bundle 'leshill/vim-json'
-Bundle 'othree/html5.vim'
-"Bundle 'kchmck/vim-coffee-script'
-Bundle 'groenewege/vim-less'
-"Bundle 'avakhov/vim-yaml'
-"Bundle 'vim-scripts/DrawIt'
-"Bundle 'git://fedorapeople.org/home/fedora/wwoods/public_git/vim-scripts.git'
-"Bundle 'Shougo/vinarise.vim'
-Bundle 'vim-scripts/OmniCppComplete'
-Bundle 'Rip-Rip/clang_complete'
-"Bundle 'marijnh/tern_for_vim'
-Bundle 'shawncplus/phpcomplete.vim'
+"Plug 'pangloss/vim-javascript'
+Plug 'leshill/vim-json'
+Plug 'othree/html5.vim'
+"Plug 'kchmck/vim-coffee-script'
+Plug 'groenewege/vim-less'
+"Plug 'avakhov/vim-yaml'
+"Plug 'vim-scripts/DrawIt'
+"Plug 'git://fedorapeople.org/home/fedora/wwoods/public_git/vim-scripts.git'
+"Plug 'Shougo/vinarise.vim'
+Plug 'vim-scripts/OmniCppComplete'
+"Plug 'Rip-Rip/clang_complete'
+"Plug 'marijnh/tern_for_vim'
+Plug 'shawncplus/phpcomplete.vim'
 
-Bundle 'klen/python-mode'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'jmcantrell/vim-virtualenv'
+Plug 'klen/python-mode'
 "" Libraries
-Bundle 'L9'
-Bundle 'tpope/vim-repeat'
-Bundle 'xuhdev/SingleCompile'
-""Bundle      'WolfgangMehner/vim-plugins'
+Plug 'tpope/vim-repeat'
+Plug 'xuhdev/SingleCompile'
+""Plug      'WolfgangMehner/vim-plugins'
+Plug 'lervag/vimtex'
 ""
 "BundleCheck
 "" call vundle#end(s
-"filetype plugin indent on
+"filetype plugin indent on 
+Plug 'altercation/solarized'
+Plug 'turbio/bracey.vim'
+Plug 'neoclide/coc.nvim', {'branch' : 'release'}
+
+" assuming you're using vim-plug: https://github.com/junegunn/vim-plug
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+" LanguageServer client for NeoVim.
+Plug 'autozimu/LanguageClient-neovim', {
+  \ 'branch': 'next',
+  \ 'do': 'bash install.sh',
+  \ }
+
+call plug#end()

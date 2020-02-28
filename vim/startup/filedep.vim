@@ -9,6 +9,11 @@
 "Does not load correcly, filetype mapping does not load
 "========================================
 
+
+
+
+    " enable ncm2 for all buffers
+    autocmd BufEnter * call ncm2#enable_for_buffer()
 if has("autocmd")
   " Enable file type detection.
   filetype plugin on
@@ -18,10 +23,11 @@ if has("autocmd")
   autocmd FileType tex  set number
   autocmd BufRead,BufNewFile *.tex set filetype=tex
 
-  autocmd FileType python set omnifunc=pythoncomplete#Complet number
+  "autocmd FileType python set omnifunc=pythoncomplete#Complet number
   autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
   autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+  autocmd FileType scss set omnifunc=csscomplete#CompleteCSS
   autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
   autocmd FileType c set omnifunc=ccomplete#Complete
   autocmd BufNewFile,BufRead cpp,h,cxx,hxx source ~/.vim/startup/cpp.vim
@@ -29,6 +35,9 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.js source ~/.vim/startup/js.vim
   autocmd BufNewFile,BufRead *.py source ~/.vim/startup/python.vim
   autocmd BufNewFile,BufRead *.php source ~/.vim/startup/php.vim
+  autocmd BufNewFile,BufRead *.vim source ~/.vim/startup/vim.vim
+  autocmd BufNewFile,BufRead *.css source ~/.vim/startup/css.vim
+  autocmd BufNewFile,BufRead *.scss source ~/.vim/startup/css.vim
   "autocmd FileType c,cpp :call C_InitMenus()
   au BufRead,BufNewFile *.php set ft=php.html
 
@@ -72,3 +81,4 @@ endif " has("autocmd")
 "set tags+=~/.vim/dev_tags/gtkmm.ctags
 "set tags+=./tags
 "//autocmd
+

@@ -21,7 +21,8 @@
 "set grepprg=grep\ -nH\ $*
 "
 "set ffs=unix
-"set enc=utf-8
+set encoding=utf-8
+set fileencoding=utf-8
 "set wrap
 "set complete=.,w,b,u,U
 "
@@ -65,32 +66,6 @@ set wcm=<C-Z>
 map <F3> :emenu <C-Z>
 map <F3> <ESC> :emenu <C-Z>
 map! <F3> <ESC> :emenu <C-Z>
-"
-" -------------
-" Interface
-"---------------
-set number relativenumber
-set ruler
-set number
-set wrap
-set laststatus=2
-set cmdheight=1
-set colorcolumn=128
-set cursorline
-set cursorcolumn
-set showmatch
-set matchtime=2
-set mousehide
-set mouse=a
-set noerrorbells
-set novisualbell
-set t_Co=256
-set background=dark
-colorscheme solarized
-let g:solarized_termcolors=256
-let g:solarized_termtrans=0
-let g:solarized_visibility='low'
-syntax enable
 " ---------------
 " Text format
 " ---------------
@@ -119,7 +94,9 @@ set clipboard+=unnamed
 set timeoutlen=250
 set foldlevelstart=99
 set formatoptions=tcq
-set complete=.,w,b,u,U
+"set complete=.,w,b,u,U
+set completeopt=menuone,menu,longest,preview
+
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
@@ -382,42 +359,42 @@ let g:pymode_rope = 0
 "--------------
 
 " vim-pyenv Setup {{{
-if jedi#init_python()
-    function! s:jedi_auto_force_py_version() abort
-        let major_version = pyenv#python#get_internal_major_version()
-        call jedi#force_py_version(major_version)
-    endfunction
-    augroup vim-pyenv-custom-augroup
-        au! *
-        au User vim-pyenv-activate-post   call s:jedi_auto_force_py_version()
-        au User vim-pyenv-deactivate-post call s:jedi_auto_force_py_version()
-    augroup END
-endif
-" }}}
-
-"--------------
-" jedi
-"--------------
-"
-" Jedi Setup {{{
-if exists(':NeoCompleteEnable')
-  let g:jedi#popup_on_dot = 0
-endif
-let g:jedi#popup_on_dot = 1
-let g:jedi#auto_initialization = 1
-let g:jedi#show_call_signatures = 2
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#show_call_signatures_delay = 0
-if &rtp =~ '\<jedi\>'
-  augroup JediSetup
-    au!
-    au FileType python
-          \ setlocal omnifunc=jedi#completions  |
-          \ call jedi#configure_call_signatures()
-  augroup END
-endif
-" }}}
-
+"'if jedi#init_python()
+"'    function! s:jedi_auto_force_py_version() abort
+"'        let major_version = pyenv#python#get_internal_major_version()
+"'        call jedi#force_py_version(major_version)
+"'    endfunction
+"'    augroup vim-pyenv-custom-augroup
+"'        au! *
+"'        au User vim-pyenv-activate-post   call s:jedi_auto_force_py_version()
+"'        au User vim-pyenv-deactivate-post call s:jedi_auto_force_py_version()
+"'    augroup END
+"'endif
+"'" }}}
+"'
+"'"--------------
+"'" jedi
+"'"--------------
+"'"
+"'" Jedi Setup {{{
+"'if exists(':NeoCompleteEnable')
+"'  let g:jedi#popup_on_dot = 0
+"'endif
+"'let g:jedi#popup_on_dot = 1
+"'let g:jedi#auto_initialization = 1
+"'let g:jedi#show_call_signatures = 2
+"'let g:jedi#auto_vim_configuration = 0
+"'let g:jedi#show_call_signatures_delay = 0
+"'if &rtp =~ '\<jedi\>'
+"'  augroup JediSetup
+"'    au!
+"'    au FileType python
+"'          \ setlocal omnifunc=jedi#completions  |
+"'          \ call jedi#configure_call_signatures()
+"'  augroup END
+"'endif
+"'" }}}
+"'
 "" Add the virtualenv's site-packages to vim path
 "py << EOF
 "import os.path
@@ -435,3 +412,7 @@ endif
 "    source $VIRTUAL_ENV/.vimrc
 "endif
 ""
+"""""""""""""""""""""""""""""""""""""""""""""
+"Livedown
+let g:livedown_browser="waterfox"
+

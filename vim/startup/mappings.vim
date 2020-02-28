@@ -50,7 +50,8 @@ imap <M-.> :tabn<CR>
 map <M-,> :tabp<CR>
 imap <M-,> :tabp<CR>
 nmap <M-,> :tabp<CR>
-map gy :tabp<CR>
+map gy :tabnext<CR>
+map gt :tabp<CR>
 "split navigation
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
@@ -79,15 +80,15 @@ vmap <M-/> <C-W><C-W>
 vnoremap <M-/> <C-W><C-W>
 """ Code folding options
 noremap <silent> f0 <ESC> :set foldlevel=0<CR>
-    nmap <silent> f1 :set foldlevel=1<CR>
-    nmap <leader>f2 :set foldlevel=2<CR>
-    nmap <leader>f3 :set foldlevel=3<CR>
-    nmap <leader>f4 :set foldlevel=4<CR>
-    nmap <leader>f5 :set foldlevel=5<CR>
-    nmap <leader>f6 :set foldlevel=6<CR>
-    nmap <leader>f7 :set foldlevel=7<CR>
-    nmap <leader>f8 :set foldlevel=8<CR>
-    nmap <leader>f9 :set foldlevel=9<CR>
+nmap <silent> f1 :set foldlevel=1<CR>
+nmap <leader>f2 :set foldlevel=2<CR>
+nmap <leader>f3 :set foldlevel=3<CR>
+nmap <leader>f4 :set foldlevel=4<CR>
+nmap <leader>f5 :set foldlevel=5<CR>
+nmap <leader>f6 :set foldlevel=6<CR>
+nmap <leader>f7 :set foldlevel=7<CR>
+nmap <leader>f8 :set foldlevel=8<CR>
+nmap <leader>f9 :set foldlevel=9<CR>
 
 "
 " Cutting/pasting zonder Functietoetsen kan met:
@@ -195,3 +196,29 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+function! Altmap(char)
+  if has('gui_running') | return ' <A-'.a:char.'> ' | else | return ' <Esc>'.a:char.' '|endif
+endfunction
+if $TERM == 'rxvt-unicode-256color'&&!has('gui_running')
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    autocmd InsertEnter * set timeoutlen=400
+    autocmd InsertLeave * set timeoutlen=2000
+  augroup END
+  execute 'map'.Altmap('.').':tabn<CR>'
+  execute 'imap'.Altmap('.').':tabn<CR>'
+  execute 'map'.Altmap(',').':tabp<CR>'
+  execute 'imap'.Altmap(',').':tabp<CR>'
+  execute 'nmap'.Altmap(',').':tabp<CR>'
+  "split navigation
+  execute 'nmap <silent>'.Altmap('<UP>').':wincmd k<CR>'
+  execute 'nmap <silent>'.Altmap('<DOWN>').':wincmd j<CR>'
+  execute 'nmap <silent>'.Altmap('<LEFT>').':wincmd h<CR>'
+  execute 'nmap <silent>'.Altmap('<RIGHT>').':wincmd l<CR>'
+
+  execute 'nmap'.Altmap('/').'<C-W><C-W>'
+  execute 'imap'.Altmap('/').'<C-W><C-W>'
+  execute 'vmap'.Altmap('/').'<C-W><C-W>'
+
+endif
