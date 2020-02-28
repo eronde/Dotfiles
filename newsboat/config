@@ -2,10 +2,12 @@ bind-key j down
 bind-key k up
 
 external-url-viewer "urlview"
-
-
+download-path "/media/storage/download/newsboat/%n"
+#download-path "~/Downloads/%h/%n"
+player "mpv"
 macro , open-in-browser
-macro v set browser "xfce4-terminal -T dropdown_hidden -e 'mpv %u --fullscreen'"; open-in-browser ; set browser linkhandler
+macro v set browser "xfce4-terminal -T dropdown_hidden -e 'mpv %u '"; open-in-browser ; set browser linkhandler
+#macro v set browser "xfce4-terminal -T dropdown_hidden -e 'mpv %u --fullscreen'"; open-in-browser ; set browser linkhandler
 macro b set browser "xfce4-terminal -T dropdown_hidden -e 'mpv %u --no-video'"; open-in-browser ; set browser linkhandler
 macro d set browser "xfce4-terminal -T dropdown_hidden -e '%\'youtube-dl -o ~/videos/%%\(title\)s-%%\(id\)s.%%\(ext\)s%\' %u'"; open-in-browser ; set browser linkhandler
 macro w set browser "w3m"; open-in-browser ; set browser linkhandler
