@@ -35,6 +35,7 @@ alias e='sudo paludis -i'
 #alias esync='sudo paludis --sync'
 #alias ew='sudo paludis -i world'
 alias p='sudo pacman -Suy' 
+alias nv='nvim ' 
 alias df='df -h'
 alias grep="grep --color=auto"
 alias unrar="unrar x"
@@ -60,7 +61,7 @@ complete -cf man
 
 
 #--ENVIRONMENTAL VARIABLES--
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # ignore duplicates in bash history
 export HISTCONTROL=ignoredups
@@ -166,7 +167,7 @@ PERL_MM_OPT="INSTALL_BASE=/home/eric/perl5"; export PERL_MM_OPT;
 #virtualenv, pip install virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/project/python
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.7
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
 alias mkpro2="mkproject -p /usr/bin/python2"
 alias mkpro3="mkproject -p /usr/bin/python3"
