@@ -2,8 +2,9 @@
 "
 "
 set spell 
-set spelllang=nl,eng
-set dictionary=~/.vim/dict/nl.txt
+set spelllang=nl,en
+set dictionary+=~/.vim/dict/nl.txt
+"set complete+=kspell
 set textwidth=128
 if has("gui_running")	" gui aanwezig?
 set guifont=21

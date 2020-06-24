@@ -24,7 +24,6 @@
 set encoding=utf-8
 set fileencoding=utf-8
 "set wrap
-"set complete=.,w,b,u,U
 "
 "set backup
 "set backupdir=~/.vim/backup
@@ -95,8 +94,8 @@ set timeoutlen=250
 set foldlevelstart=99
 set formatoptions=tcq
 "set complete=.,w,b,u,U
-set completeopt=menuone,menu,longest,preview
-
+set completeopt=menuone,menu,noselect
+set complete+=,k,w,b
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
@@ -105,7 +104,7 @@ set incsearch
 set hlsearch
 set tm=3000 "Timeout to 3000ms"
 let mapleader='\\'
-au FocusLost * :wa<CR>
+au FocusLost * <ESC>:wa <cr>
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv<CR>
 nnoremap N Nzzzv

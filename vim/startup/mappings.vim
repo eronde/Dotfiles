@@ -114,6 +114,10 @@ nmap <leader>q' ciw'<Esc>p<Esc>
 "
 " map dead keys (alt-shift dollar geeft in insert-mode ook een ¤)
 " :imap =c     ¤
+"
+
+"inoremap <expr> <c-k> ("\<C-p>")
+
 " :imap c=     ¤
 "
 " Buffer pipes: (grep, sort etc.)

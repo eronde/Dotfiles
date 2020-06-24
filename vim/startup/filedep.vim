@@ -82,3 +82,6 @@ endif " has("autocmd")
 "set tags+=./tags
 "//autocmd
 
+let g:ycm_filetype_blacklist = {'text':1, 'markdown':1, 'php':1}
+let g:apc_enable_ft = {'text':1, 'markdown':1}
+"let g:apc_enable_ft = {'text':1, 'markdown':1, 'php':1}

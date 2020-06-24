@@ -59,8 +59,9 @@ Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-startify'
-" Plug 'othree/vim-autocomplpop'
 Plug 'L9'
+"Completion
+Plug 'skywind3000/vim-auto-popmenu'
 Plug 'Valloric/YouCompleteMe', {'do' : 'python install.py --clang-completer'}
 "Plug 'Valloric/YouCompleteMe', {'do' : 'python install.py --all'}
 "" Language Additions
@@ -106,5 +107,6 @@ Plug 'autozimu/LanguageClient-neovim', {
   \ 'branch': 'next',
   \ 'do': 'bash install.sh',
   \ }
-
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'lambdalisue/vim-amake'
 call plug#end()
