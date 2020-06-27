@@ -1,7 +1,7 @@
 #!/bin/sh   
 DOTDIR=~/Dotfiles
 DOTDIR_OLD=~/Dotfiles_OLD
-DOTFILES="bashrc vim vimrc tmux.conf"
+DOTFILES="bashrc vim vim/vimrc tmux.conf"
 NOW=$(date +%d%m%y%H%M%S)
 
 mkdir -vp $DOTDIR
