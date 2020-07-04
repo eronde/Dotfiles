@@ -23,7 +23,7 @@ Plug 'gregsexton/VimCalc'
   Plug 'terryma/vim-multiple-cursors'
  Plug 'tpope/vim-unimpaired'
   Plug 'yonchu/accelerated-smooth-scroll'
- Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 "  Plug 'AzizLight/TaskList.vim'
  Plug 'kien/rainbow_parentheses.vim'
   Plug 'tpope/vim-commentary'
@@ -35,7 +35,7 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vimshell.vim'
 Plug 'sjl/gundo.vim'
-Plug 'spiiph/vim-space'
+"Plug 'spiiph/vim-space'
 Plug 'Lokaltog/vim-easymotion'
 "" UI Additions
   Plug 'nathanaelkane/vim-indent-guides'
@@ -59,7 +59,7 @@ Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-startify'
-Plug 'L9'
+"Plug 'L9'
 "Completion
 Plug 'skywind3000/vim-auto-popmenu'
 Plug 'Valloric/YouCompleteMe', {'do' : 'python install.py --clang-completer'}
@@ -109,4 +109,9 @@ Plug 'autozimu/LanguageClient-neovim', {
   \ }
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'lambdalisue/vim-amake'
+" colorscheme 
+Plug 'morhetz/gruvbox'
+" Local
+Plug '/home/eric/.vim/plugged/suggest.vim'
+
 call plug#end()
