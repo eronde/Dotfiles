@@ -42,7 +42,12 @@ source ~/.vim/startup/functions.vim
 " ==============================
 "
 source ~/.vim/startup/filedep.vim
-let g:pymode = 0
+"
+" Colorscheme
+source ~/.vim/startup/colorscheme.vim
+"Plugin settings
+source ~/.vim/startup/coc.vim
+
 "
 "
 " Spellingscontrolle
