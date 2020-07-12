@@ -26,12 +26,12 @@ noremap <silent> <F11> <C-X><C-O>
 map  <F11> <C-X><C-O>
 map! <silent> <F11>   <C-X><C-O>
 "noremap <tab> <C-P>
-"map <HOME> 1G
-"map! <HOME> <ESC>1G
-"map <END> G
-"map! <END> <ESC>G
-map <C-u> u
-imap <C-u> <C-O>u
+map <HOME> ^
+map! <HOME> <ESC>^
+map <END> $
+map! <END> <ESC>$
+"map <C-u> u
+"imap <C-u> <C-O>u
 cmap <C-u> <C-C><C-u>
 map <t_%9> u
 imap <t_%9> <C-O>u
