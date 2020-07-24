@@ -10,8 +10,8 @@ map! <F4> <ESC>:set paste
 map <F5> :set nopaste
 map! <F5> <ESC>:set nopaste
 map <F6> :w!
-map! <F6> <ESC>:w!
-map <F6> <ESC>:w!
+map! <F6> <ESC>:w!<CR>
+map <F6> <ESC>:w!<CR>
 map <F7> :wqa!<CR>
 map! <F7> <ESC>:wqa!<CR>
 map <F8> :qall!<CR>
