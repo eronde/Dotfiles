@@ -306,7 +306,7 @@ alias backup_docs_to_nas " sudo rsync -rah  -v --exclude '.cache*' --exclude '*.
 alias hg history_grep
 
 #--ENVIRONMENTAL VARIABLES--
-export EDITOR "nvim"
+set -g EDITOR nvim
 
 
 
