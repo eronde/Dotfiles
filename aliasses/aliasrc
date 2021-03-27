@@ -1,0 +1,19 @@
+alias ls="ls --color=always"
+alias d="ls --color=always -a"
+alias v="ls -Fsv -l -a -h --color=always "
+alias e='sudo paludis -i'
+#alias es='sudo eix b'
+#alias ep='sudo paludis -pi'
+#alias eu='sudo paludis unmerge'
+#alias edeep='sudo paludis -DNu'
+#alias esync='sudo paludis --sync'
+#alias ew='sudo paludis -i world'
+alias p='sudo pacman -Suy' 
+alias nv='nvim ' 
+alias df='df -h'
+alias grep="grep --color=auto"
+alias unrar="unrar x"
+alias ..="cd .."
+alias backup_docs_to_nas=" sudo rsync -rah  -v --exclude '.cache*' --exclude '*.svn*' --exclude 'gegevens' --exclude '*archbuild*' -e 'ssh -p2212 -i ~eric/.ssh/nas_openat_rsa' /home/eric/docs/ 'eric@192.168.2.12:~/backup/docs/'  --progress --log-file ~eric/rsync_home.log"
+
+
