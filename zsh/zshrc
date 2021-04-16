@@ -1,0 +1,60 @@
+# The following lines were added by compinstall
+
+# Enable colors and change prompt:
+autoload -U colors && colors
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+
+# History in cache directory:
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.cache/zsh/history
+
+# Basic auto/tab complete:
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.
+
+# vi mode
+zstyle ':completion:*' completer _complete _ignored
+zstyle :compinstall filename '/home/eric/.zshrc'
+
+autoload -Uz promptinit
+promptinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+# key bindings (showkeys -a)
+bindkey "\e[H" beginning-of-line
+bindkey "\e[F" end-of-line
+bindkey "e[5~" beginning-of-history
+bindkey "e[6~" end-of-history
+bindkey "\e[3~" delete-char
+bindkey "e[2~" quoted-insert
+bindkey "e[5C" forward-word
+bindkey "eOc" emacs-forward-word
+bindkey "e[5D" backward-word
+bindkey "eOd" emacs-backward-word
+bindkey "ee[C" forward-word
+bindkey "ee[D" backward-word
+bindkey "^H" backward-delete-word
+# for rxvt
+bindkey "e[8~" end-of-line
+bindkey "e[7~" beginning-of-line
+# for non RH/Debian xterm, can't hurt for RH/DEbian xterm
+bindkey "eOH" beginning-of-line
+bindkey "eOF" end-of-line
+# for freebsd console
+bindkey "e[H" beginning-of-line
+bindkey "e[F" end-of-line
+# completion in the middle of a line
+bindkey '^i' expand-or-complete-prefix
+
+
+[ -f ~/Dotfiles/aliasses/aliasrc ] && source ~/Dotfiles/aliasses/aliasrc  
+[ -f ~/Dotfiles/exports/exportsrc ] && source ~/Dotfiles/exports/exportsrc
+[ -f ~/Dotfiles/zsh/plugins.zsh ] && source ~/Dotfiles/zsh/plugins.zsh
+# End of lines configured by zsh-newuser-install
