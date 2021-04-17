@@ -53,6 +53,9 @@ bindkey "e[F" end-of-line
 # completion in the middle of a line
 bindkey '^i' expand-or-complete-prefix
 
+#bindkey plugins
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 [ -f ~/Dotfiles/aliasses/aliasrc ] && source ~/Dotfiles/aliasses/aliasrc  
 [ -f ~/Dotfiles/exports/exportsrc ] && source ~/Dotfiles/exports/exportsrc

@@ -13,3 +13,5 @@ source ~/Dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # source ~/Dotfiles/zsh/plugins/zsh-kjk 2>/dev/null
 
 source ~/Dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+source ~/Dotfiles/zsh/plugins/zsh-edit/zsh-edit.plugin.zsh 2>/dev/null
+source ~/Dotfiles/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh 2>/dev/null
