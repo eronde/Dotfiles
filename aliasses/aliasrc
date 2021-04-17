@@ -15,5 +15,4 @@ alias grep="grep --color=auto"
 alias unrar="unrar x"
 alias ..="cd .."
 alias backup_docs_to_nas=" sudo rsync -rah  -v --exclude '.cache*' --exclude '*.svn*' --exclude 'gegevens' --exclude '*archbuild*' -e 'ssh -p2212 -i ~eric/.ssh/nas_openat_rsa' /home/eric/docs/ 'eric@192.168.2.12:~/backup/docs/'  --progress --log-file ~eric/rsync_home.log"
-
-
+alias vf="vifm . ."
