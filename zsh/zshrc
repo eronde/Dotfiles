@@ -57,6 +57,30 @@ bindkey '^i' expand-or-complete-prefix
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
+#vimode
+#bindkey -v 
+#KEYTIMEOUT=1
+##Edit line in nvim 
+#export VISUAL=nvim
+#autoload edit-command-line; zle -N edit-command-line
+#bindkey '^e' edit-command-line
+
+#bindkey -v "\e[H" beginning-of-line
+#bindkey -v "\e[F" end-of-line
+#bindkey -v "e[5~" beginning-of-history
+#bindkey -v "e[6~" end-of-history
+#bindkey -v "\e[3~" delete-char
+#function zle-line-init zle-keymap-select {
+#  RPS1="${${KEYMAP/vicmd/-N-}/(main|viins)/-I-}"
+#  RPS2=$RPS1
+#  zle reset-prompt
+#}
+
+#zle -N zle-line-init
+#zle -N zle-keymap-select
+
+
+
 [ -f ~/Dotfiles/aliasses/aliasrc ] && source ~/Dotfiles/aliasses/aliasrc  
 [ -f ~/Dotfiles/exports/exportsrc ] && source ~/Dotfiles/exports/exportsrc
 [ -f ~/Dotfiles/zsh/plugins.zsh ] && source ~/Dotfiles/zsh/plugins.zsh
