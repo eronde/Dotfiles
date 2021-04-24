@@ -104,7 +104,9 @@ set smartcase
 set incsearch
 set hlsearch
 set tm=3000 "Timeout to 3000ms"
-let mapleader='\\'
+let mapleader='\'
+" hi Search ctermfg=Red
+hi Search ctermbg=Red
 " Save all when focus is lost
 au FocusLost * silent! wa
 " Keep search matches in the middle of the window.

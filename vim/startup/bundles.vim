@@ -35,7 +35,7 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vimshell.vim'
 Plug 'sjl/gundo.vim'
-"Plug 'spiiph/vim-space'
+Plug 'vifm/vifm.vim'
 Plug 'Lokaltog/vim-easymotion'
 "" UI Additions
   Plug 'nathanaelkane/vim-indent-guides'
@@ -62,7 +62,7 @@ Plug 'mhinz/vim-startify'
 "Plug 'L9'
 "Completion
 Plug 'skywind3000/vim-auto-popmenu'
-Plug 'Valloric/YouCompleteMe', {'do' : 'python install.py --clang-completer'}
+"Plug 'Valloric/YouCompleteMe', {'do' : 'python install.py --clang-completer'}
 "Plug 'Valloric/YouCompleteMe', {'do' : 'python install.py --all'}
 "" Language Additions
 "Plug 'dag/vim2hs'
@@ -85,7 +85,7 @@ Plug 'vim-scripts/OmniCppComplete'
 "Plug 'marijnh/tern_for_vim'
 Plug 'shawncplus/phpcomplete.vim'
 
-Plug 'klen/python-mode'
+"Plug 'klen/python-mode'
 "" Libraries
 Plug 'tpope/vim-repeat'
 Plug 'xuhdev/SingleCompile'
@@ -99,19 +99,26 @@ Plug 'altercation/solarized'
 Plug 'turbio/bracey.vim'
 Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 
-" assuming you're using vim-plug: https://github.com/junegunn/vim-plug
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
+"Language server protocol
+" Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/vim-lsp'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'ncm2/ncm2'
+" Plug 'ncm2/ncm2-vim-lsp'
+" Plug 'roxma/nvim-yarp'
+" Plug 'ryanolsonx/vim-lsp-python'
 " LanguageServer client for NeoVim.
-Plug 'autozimu/LanguageClient-neovim', {
-  \ 'branch': 'next',
-  \ 'do': 'bash install.sh',
-  \ }
+" Plug 'autozimu/LanguageClient-neovim', {
+"   \ 'branch': 'next',
+"   \ 'do': 'bash install.sh',
+"   \ }
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'lambdalisue/vim-amake'
 " colorscheme 
 Plug 'morhetz/gruvbox'
+" Testing
+Plug 'junegunn/vader.vim'
 " Local
-Plug '/home/eric/.vim/plugged/suggest.vim'
-
+ Plug '/home/eric/.vim/plugged/suggest.vim'
+Plug '/home/eric/.vim/plugged/voiture.vim'
 call plug#end()
